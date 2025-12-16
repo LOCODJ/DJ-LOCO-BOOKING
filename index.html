@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book DJ LOCO | Official Booking Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="image_059643.jpg" alt="DJ LOCO Production Logo" class="logo">
+    </header>
+
+    <div class="booking-section">
+        <div class="content-container">
+            <div class="profile-photo">
+                <img src="image_059663.jpg" alt="DJ LOCO Profile Picture">
+            </div>
+
+            <div class="booking-form-container">
+                <h1>Book DJ LOCO for your next event!</h1>
+                
+                <form action="save_booking.php" method="POST" id="bookingForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="datetime-local" name="event_date_time" placeholder="Event Date & Time" required>
+                    <input type="text" name="venue_location" placeholder="Venue Location" required>
+                    <input type="text" name="event_type" placeholder="Event Type (e.g. Club Night, Private Party, Festival)" required>
+                    <textarea name="additional_details" placeholder="Additional Details/Requests"></textarea>
+                    
+                    <button type="submit" class="book-btn">BOOK NOW</button>
+                </form>
+
+                <p class="email-note">
+                    If Having any problem with Booking Please contact me Via Instagram: Loco__dj
+                    
+                </p>
+
+                <div class="social-links-inline">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="SoundCloud/Music Link"><i class="fas fa-headphones"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            /
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            / Listen to my latest tracks
+        </div>
+    </footer>
+
+</body>
+</html>

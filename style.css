@@ -1,0 +1,220 @@
+/* --- Variables and Reset --- */
+:root {
+    --primary-color: #00bcd4; /* A light cyan/blue for highlights */
+    --accent-color: #ff00ff; /* Bright magenta/pink for accents */
+    --background-dark: #1f1f1f; /* Dark background */
+    --form-background: #2b2b2b; /* Slightly lighter dark for form area */
+    --text-light: #ffffff;
+    --text-muted: #aaaaaa;
+    --btn-color: #007bff; /* Button blue */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header & Logo --- */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000000; /* Black strip above the main section */
+    border-bottom: 2px solid var(--form-background);
+}
+
+.logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* --- Main Booking Section --- */
+.booking-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    
+    /* Background Styles - Recreating the dark, gritty background with neon lines */
+    background: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><linearGradient id="neonGlow1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:0" /></linearGradient><linearGradient id="neonGlow2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:rgb(255,0,255);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:0" /></linearGradient></defs><rect width="100" height="100" fill="#202020" /><line x1="10" y1="0" x2="30" y2="100" stroke="url(%23neonGlow1)" stroke-width="0.5" stroke-dasharray="5 5" opacity="0.4" /><line x1="90" y1="100" x2="70" y2="0" stroke="url(%23neonGlow2)" stroke-width="0.5" stroke-dasharray="5 5" opacity="0.4" /><circle cx="50" cy="50" r="40" stroke="#444" stroke-width="0.2" fill="none" /></svg>') repeat,
+        #252525;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--form-background);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    max-width: 1000px;
+    width: 90%;
+}
+
+/* --- Profile Photo --- */
+.profile-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-right: 40px;
+}
+
+.profile-photo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Creating the circular 'sound wave' effect around the image */
+    box-shadow: 
+        0 0 0 5px rgba(255, 255, 255, 0.2), 
+        0 0 0 10px rgba(255, 255, 255, 0.1),
+        0 0 0 15px rgba(255, 255, 255, 0.05);
+    filter: grayscale(100%) brightness(1.2); /* Black and white/darker effect from the image */
+}
+
+/* --- Booking Form --- */
+.booking-form-container {
+    flex: 2;
+}
+
+.booking-form-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: var(--text-light);
+}
+
+#bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#bookingForm input[type="text"],
+#bookingForm input[type="datetime-local"],
+#bookingForm textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #383838;
+    color: var(--text-light);
+    font-size: 1em;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+#bookingForm input:focus,
+#bookingForm textarea:focus {
+    outline: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+#bookingForm textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.book-btn {
+    padding: 15px;
+    background-color: var(--btn-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.book-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Notes & Socials --- */
+.email-note {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 15px;
+}
+
+.email-note a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.social-links-inline {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; /* Aligns with the form */
+}
+
+.social-links-inline a {
+    color: var(--text-muted);
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-links-inline a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 15px 0;
+    text-align: center;
+    background-color: #000000;
+    color: var(--text-muted);
+    border-top: 2px solid var(--form-background);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Responsive Design (For smaller screens) --- */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .profile-photo {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .profile-photo img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .booking-form-container h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .social-links-inline {
+        justify-content: center;
+    }
+}
